@@ -1,5 +1,5 @@
 <body>
-<div class ="logo" align="center"><img src="./img/kwc1.png" alt="logo" width="200" style="border-radius: 25px" /></div>
+<div class ="logo" align="center"><img src="./img/logo.jpg" alt="logo" width="300" style="border-radius: 25px" /></div>
 
 # <div align="center">__PushOver__</div>
 
