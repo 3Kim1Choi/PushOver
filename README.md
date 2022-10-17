@@ -33,7 +33,7 @@
 
 <table>
 <th>
-<div class="profile" align="center"><a href="https://github.com/linklingj/PushOver/commits?author=Kduuku">
+<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=Kduuku">
   <img src="https://avatars.githubusercontent.com/u/108998132?v=4" width = "70" style = "border-radius: 25px"/>
 </div>
 <br>
@@ -41,7 +41,7 @@
 </th>
 
 <th>
-<div class="profile" align="center"><a href="https://github.com/linklingj/PushOver/commits?author=linklingj">
+<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=linklingj">
   <img src="https://avatars.githubusercontent.com/u/100084554?v=4" width = "70" style = "border-radius: 25px"/>
 </a></div>
 <br>
@@ -49,7 +49,7 @@
 </th>
 
 <th>
-<div class="profile" align="center"><a href="https://github.com/linklingj/PushOver/commits?author=geonbly327">
+<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=geonbly327">
   <img src="https://avatars.githubusercontent.com/u/44095919?v=4" width = "70" style = "border-radius: 25px"/>
 </a></div>
 <br>
@@ -57,7 +57,7 @@
 </th>
 
 <th>
-<div class="profile" align="center"><a href="https://github.com/linklingj/PushOver/commits?author=username056">
+<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=username056">
   <img src="https://avatars.githubusercontent.com/u/84067473?v=4" width = "70" style = "border-radius: 25px"/>
 </a></div>
 <br>
