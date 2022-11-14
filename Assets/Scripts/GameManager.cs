@@ -54,5 +54,19 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    public void GameStart() {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Credit() {
+        SceneManager.LoadScene("Credit");
+    }
+
+    public void Quit() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+            Application.Quit();
+    }
 
 }

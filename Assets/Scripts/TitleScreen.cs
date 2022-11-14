@@ -95,5 +95,15 @@ public class TitleScreen : MonoBehaviour
 
         LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 1, 0.3f).setDelay(3f);
     }
+
+    public void Button(int n) {
+        if (n == 0) {
+            GameManager.Instance.GameStart();
+        } if (n == 1) {
+            GameManager.Instance.Credit();
+        } else if (n == 3) {
+            GameManager.Instance.Quit();
+        }
+    }
     
 }

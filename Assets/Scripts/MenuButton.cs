@@ -13,6 +13,7 @@ public class MenuButton : MonoBehaviour
             animator.SetBool("selected", true);
             if (Input.GetAxis("Submit") == 1) {
                 animator.SetBool("pressed", true);
+                titleScreen.Button(thisIndex);
             } else if (animator.GetBool("pressed")) {
                 animator.SetBool("pressed",false);
             }
