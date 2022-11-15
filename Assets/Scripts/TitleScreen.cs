@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleScreen : MonoBehaviour
+//타이틀 화면의 애니메이션과 버튼 처리를 담당한다
+public class TitleScreen : MenuElements
 {
-    public int index;
-    [SerializeField] bool keyDown;
-    [SerializeField] int maxIndex;
     [SerializeField] GameObject[] letters;
     [SerializeField] GameObject bg, stopSign;
-    public AudioSource audioSource;
+    
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -18,28 +16,7 @@ public class TitleScreen : MonoBehaviour
         ShowBG();
     }
 
-    void Update() {
-        if (Input.GetAxis("Vertical") != 0) {
-            if (!keyDown) {
-                if (Input.GetAxis("Vertical") < 0) {
-                    if (index < maxIndex) {
-                        index++;
-                    } else {
-                        index = 0;
-                    }
-                } else if (Input.GetAxis("Vertical") > 0) {
-                    if (index > 0) {
-                        index--;
-                    } else {
-                        index = maxIndex;
-                    }
-                }
-                keyDown = true;
-            }
-        } else {
-            keyDown = false;
-        }
-    }
+    
 
     void MoveLetters() {
         letters[0].GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0,-9);
@@ -73,18 +50,18 @@ public class TitleScreen : MonoBehaviour
         LeanTween.alphaCanvas(letters[7].GetComponent<CanvasGroup>(), 1, 0.3f).setDelay(2.1f);
 
         LeanTween.scale(letters[0], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[1], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[2], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[3], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[4], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[5], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[6], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
-        LeanTween.scale(letters[7], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack);
+        LeanTween.scale(letters[1], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(0.3f);
+        LeanTween.scale(letters[2], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(0.6f);
+        LeanTween.scale(letters[3], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(0.9f);
+        LeanTween.scale(letters[4], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(1.2f);
+        LeanTween.scale(letters[5], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(1.5f);
+        LeanTween.scale(letters[6], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(1.8f);
+        LeanTween.scale(letters[7], new Vector3(1f,1f,1f),0.3f).setEase(LeanTweenType.easeOutBack).setDelay(2.1f);
     }
 
     void MoveSign() {
         stopSign.GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0,16);
-        stopSign.GetComponent<RectTransform>().anchoredPosition = new Vector3(573.7255f, 1200f, 0);
+        stopSign.GetComponent<RectTransform>().anchoredPosition = new Vector3(573.7255f, 1300f, 0);
 
         LeanTween.value(stopSign,1200f,32.171f,0.3f).setDelay(2.2f).setOnUpdate((float val) => {stopSign.GetComponent<RectTransform>().anchoredPosition = new Vector3(573.7255f, val, 0);});
         LeanTween.rotate(stopSign, new Vector3(0,0,0), 0.5f).setDelay(2.5f).setEase(LeanTweenType.easeOutBounce);
@@ -101,7 +78,7 @@ public class TitleScreen : MonoBehaviour
             GameManager.Instance.GameStart();
         } if (n == 1) {
             GameManager.Instance.Credit();
-        } else if (n == 3) {
+        } else if (n == 2) {
             GameManager.Instance.Quit();
         }
     }
