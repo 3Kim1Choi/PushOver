@@ -13,6 +13,8 @@ public enum GameState {
     Ending
 }
 
+//게임의 전체적인 흐름과 중요 정보를 저장한다
+//SINGLETON 클래스
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -54,5 +56,23 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    public void GameStart() {
+        SceneManager.LoadScene(1);
+    }
+
+    public void Credit() {
+        SceneManager.LoadScene("Credit");
+    }
+
+    public void Quit() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+            Application.Quit();
+    }
+
+    public void ToTitile() {
+        SceneManager.LoadScene("Title");
+    }
 
 }
