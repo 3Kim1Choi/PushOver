@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterAnimation))]
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Movement")]
@@ -10,20 +11,13 @@ public class PlayerController : MonoBehaviour
     public float curSpeed;
 
     Rigidbody2D rb;
-    Animator anim;
+    CharacterAnimation c_anim;
 
     Vector2 movement;
-    //애니메이션 관련
-    string animationState;
-    bool movingSideways = true;
-    bool moving;
-    char dir;
-    const string IDLE = "OneChoi_idle";
-    const string WALK = "OneChoi_walk";
     
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        c_anim = GetComponent<CharacterAnimation>();
     }
 
 
@@ -34,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
-        CheckAnim();
+        c_anim.CheckAnim(movement);
     }
 
     //입력값 얻음
@@ -42,51 +36,6 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
-    }
-
-    void CheckAnim() {
-        if (movement.magnitude < 0.1f) {
-            if (moving) {
-                ChangeAnimationState(IDLE + dir);
-                moving = false;
-            }
-        } else {
-            if(movingSideways) {
-                if (movement.x > 0)
-                    dir = 'R';
-                else if (movement.x < 0)
-                    dir = 'L';
-                else {
-                    if (movement.y > 0) 
-                        dir = 'U';
-                    else if (movement.y < 0)
-                        dir = 'D';
-                    movingSideways = false;
-                }
-            } else {
-                if (movement.y > 0) 
-                    dir = 'U';
-                else if (movement.y < 0)
-                    dir = 'D';
-                else {
-                    if (movement.x > 0)
-                        dir = 'R';
-                    else if (movement.x < 0)
-                        dir = 'L';
-                    movingSideways = true;
-                }
-            }
-            ChangeAnimationState(WALK + dir);
-            moving = true;
-        }
-    }
-
-    void ChangeAnimationState(string newState) {
-        if (animationState == newState)
-            return;
-        
-        anim.Play(newState);
-        animationState = newState;
     }
 
 }
