@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,6 +95,18 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -2117,16 +2129,16 @@ TextureImporter:
       Terrain (32x32)_85: -588115850
       Terrain (32x32)_4: 537372755
       Terrain (32x32)_1: -1733067727
+      Terrain (32x32)_86: 1141507470
       Terrain (32x32)_11: 503016565
-      Terrain (32x32)_55: 1938118175
       Terrain (32x32)_71: 1247545455
       Terrain (32x32)_29: -1257370661
       Terrain (32x32)_25: 1589923288
       Terrain (32x32)_39: 67054410
-      Terrain (32x32)_86: 1141507470
+      Terrain (32x32)_55: 1938118175
       Terrain (32x32)_28: -84377610
-      Terrain (32x32)_60: -1984643297
       Terrain (32x32)_62: -865325024
+      Terrain (32x32)_60: -1984643297
       Terrain (32x32)_81: -1701528703
       Terrain (32x32)_78: 556629269
       Terrain (32x32)_74: -916306686
@@ -2140,10 +2152,10 @@ TextureImporter:
       Terrain (32x32)_3: -1762159520
       Terrain (32x32)_64: 1056453748
       Terrain (32x32)_2: -1276490051
-      Terrain (32x32)_18: -1424077673
       Terrain (32x32)_91: -2027987243
-      Terrain (32x32)_46: 1724178709
+      Terrain (32x32)_18: -1424077673
       Terrain (32x32)_56: 620092404
+      Terrain (32x32)_46: 1724178709
       Terrain (32x32)_66: -880808708
       Terrain (32x32)_35: -544596099
       Terrain (32x32)_92: 1219004231
