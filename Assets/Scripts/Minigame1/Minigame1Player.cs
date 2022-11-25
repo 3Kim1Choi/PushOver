@@ -13,9 +13,14 @@ public class Minigame1Player : MonoBehaviour
     float horizontalMove, verticalMove;
     Vector2 vel = Vector2.zero;
     bool jump, onGround;
+    [SerializeField] Minigame1UI ui;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start() {
+        transform.position = new Vector3(0, -3.5f, 0);
     }
 
     void Update() {
@@ -42,7 +47,8 @@ public class Minigame1Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("death")) {
             Debug.Log("gameover");
-            GameManager.Instance.M1Fail();
+            Time.timeScale = 0;
+            ui.GameFail();
         }
         if (col.CompareTag("clear")) {
             Debug.Log("clear");

@@ -11,7 +11,7 @@ public class Gear : MonoBehaviour
 
     void Start() {
         sr = GetComponent<SpriteRenderer>();
-        LeanTween.rotate(gameObject, new Vector3(0, 0, 90), 1).setRepeat(30);
+        LeanTween.rotate(gameObject, new Vector3(0, 0, 90), 0.5f).setRepeat(30);
         if (gearType == 0) {
             LeanTween.moveX(gameObject, 10, Random.Range(4,6)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
             sr.sprite = s1;
@@ -19,7 +19,7 @@ public class Gear : MonoBehaviour
             LeanTween.moveX(gameObject, -10, Random.Range(4,6)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
             sr.sprite = s2;
         } else if (gearType == 2) {
-            LeanTween.moveY(gameObject, transform.position.y - 20, Random.Range(6,8)).setEase(LeanTweenType.easeInCubic).setOnComplete(Destroy);
+            LeanTween.moveY(gameObject, transform.position.y - 25, Random.Range(7,9)).setEase(LeanTweenType.easeInCubic).setOnComplete(Destroy);
             sr.sprite = s3;
         }
     }
