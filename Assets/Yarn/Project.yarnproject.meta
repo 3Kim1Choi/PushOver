@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 76b93476558054e4b9e6f3a60e2d1f45
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 053561912b1654d80a424bb0696a74ae, type: 3}
+  sourceScripts:
+  - {fileID: 6391573757903218779, guid: eb2f1c89296dbc342acc29aa5d35a8e1, type: 3}
+  compileErrors: []
+  serializedDeclarations: []
+  defaultLanguage: ko-KR
+  languagesToSourceAssets: []
+  useAddressableAssets: 0
