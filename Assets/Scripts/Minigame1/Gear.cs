@@ -13,10 +13,10 @@ public class Gear : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         LeanTween.rotate(gameObject, new Vector3(0, 0, 90), 0.5f).setRepeat(30);
         if (gearType == 0) {
-            LeanTween.moveX(gameObject, 10, Random.Range(4,6)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
+            LeanTween.moveX(gameObject, 10, Random.Range(6,8)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
             sr.sprite = s1;
         } else if (gearType == 1) {
-            LeanTween.moveX(gameObject, -10, Random.Range(4,6)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
+            LeanTween.moveX(gameObject, -10, Random.Range(6,8)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
             sr.sprite = s2;
         } else if (gearType == 2) {
             LeanTween.moveY(gameObject, transform.position.y - 25, Random.Range(7,9)).setEase(LeanTweenType.easeInCubic).setOnComplete(Destroy);

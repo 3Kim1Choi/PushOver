@@ -27,7 +27,7 @@ public class PlatformGenerator : MonoBehaviour
             float tmpX = Random.Range(minX, maxX);
             tmpX = Mathf.Clamp(tmpX, -maxXDif, maxXDif);
             GameObject p = Instantiate(platform, new Vector3(tmpX, i * interval - 2, 0) ,Quaternion.identity);
-            p.GetComponent<SpriteRenderer>().size = new Vector2(Random.Range(minW, maxW), 0.15f);
+            p.GetComponent<SpriteRenderer>().size = new Vector2(Random.Range(minW, maxW), 0.2f);
             prevX = p.transform.position.x;
             p.transform.parent = parent.transform;
         }

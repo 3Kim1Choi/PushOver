@@ -5,20 +5,24 @@ using UnityEngine;
 public class Minigame1UI : MenuElements
 {
     public GameObject bg;
+    bool gameFail;
     void Start() {
-        
+        gameFail = false;
     }
 
     public void GameFail() {
-        LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 1, 0.5f).setIgnoreTimeScale(true);
+        LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 1, 0.5f).setOnComplete(() => {gameFail = true;});
     }
 
     public void Button(int n) {
-        if (n == 0) {
-            LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 0, 0.05f);
-            Time.timeScale = 1;
-        } if (n == 1) {
-            GameManager.Instance.M1Fail();
+        if (gameFail) {
+            if (n == 0) {
+                LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 0, 0.05f);
+                GameManager.Instance.M1Start();
+            } if (n == 1) {
+                GameManager.Instance.M1Fail();
+            }
+
         }
     }
 }

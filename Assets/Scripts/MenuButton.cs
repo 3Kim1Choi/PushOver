@@ -35,6 +35,8 @@ public class MenuButton : MonoBehaviour
                     titleScreen.Button(thisIndex);
                 if (thisScene == 1)
                     creditScreen.Button(thisIndex);
+                if (thisScene == 2)
+                    minigame1UI.Button(thisIndex);
             } else if (animator.GetBool("pressed")) {
                 animator.SetBool("pressed",false);
             }

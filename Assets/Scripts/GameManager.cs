@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
         UpdateGameState(GameState.Title);
     }
 
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.U)) {
+            M1Start();
+        }
+    }
+
     public void UpdateGameState(GameState newState) {
         State = newState;
         switch (newState) {
@@ -75,6 +81,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Title");
     }
 
+    public void M1Start() {
+        SceneManager.LoadScene("JumpMinigame");
+    }
     public void M1Fail() {
         SceneManager.LoadScene("SejongUniv");
     }

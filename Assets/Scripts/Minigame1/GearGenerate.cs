@@ -18,7 +18,7 @@ public class GearGenerate : MonoBehaviour
 
     private void Update() {
         timer += Time.deltaTime;
-        if (timer > lastTime + 1.5f) {
+        if (timer > lastTime + 2f) {
             int rand = Random.Range(0,3);
             if (rand == 0) {
                 GameObject g = Instantiate(gear, new Vector3(-10, player.transform.position.y + Random.Range(2, 7), 0 ), Quaternion.identity);
@@ -35,7 +35,7 @@ public class GearGenerate : MonoBehaviour
                 g.transform.parent = gears.transform;
                 g.GetComponent<Gear>().gearType = 2;
             }
-            lastTime += 1.5f;
+            lastTime += 2f;
         }
     }
 
