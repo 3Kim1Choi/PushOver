@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
         c_anim = GetComponent<CharacterAnimation>();
     }
 
-
     void Update() {
         GetInput();
         curSpeed = rb.velocity.magnitude;
@@ -37,5 +36,5 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
     }
-
+    
 }

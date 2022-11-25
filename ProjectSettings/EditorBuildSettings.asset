@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credit.unity
     guid: c77d7d1c2e4964e4da6dab7974dcd408
+  - enabled: 1
+    path: Assets/Scenes/JumpMinigame.unity
+    guid: 3e2811563cbb868428e810e3cca0ee7f
   - enabled: 0
     path: Assets/Scenes/Playtest.unity
     guid: 2cda990e2423bbf4892e6590ba056729

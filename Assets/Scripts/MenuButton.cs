@@ -9,12 +9,14 @@ public class MenuButton : MonoBehaviour
 {
     [SerializeField] TitleScreen titleScreen;
     [SerializeField] CreditScreen creditScreen;
+    [SerializeField] Minigame1UI minigame1UI;
     [SerializeField] Animator animator;
     //해당 버튼의 인덱스
     [SerializeField] int thisIndex;
     //현재 씬
     //0 : 타이틀
     //1 : 크래딧
+    //2: 미니게임1
     [SerializeField] int thisScene;
     int currentIndex;
 
@@ -23,6 +25,8 @@ public class MenuButton : MonoBehaviour
             currentIndex = titleScreen.index;
         else if (thisScene == 1)
             currentIndex = creditScreen.index;
+        else if (thisScene == 2)
+            currentIndex = minigame1UI.index;
         if (currentIndex == thisIndex) {
             animator.SetBool("selected", true);
             if (Input.GetAxis("Submit") == 1) {
@@ -31,6 +35,8 @@ public class MenuButton : MonoBehaviour
                     titleScreen.Button(thisIndex);
                 if (thisScene == 1)
                     creditScreen.Button(thisIndex);
+                if (thisScene == 2)
+                    minigame1UI.Button(thisIndex);
             } else if (animator.GetBool("pressed")) {
                 animator.SetBool("pressed",false);
             }
