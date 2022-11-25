@@ -39,4 +39,15 @@ public class Minigame1Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("death")) {
+            Debug.Log("gameover");
+            GameManager.Instance.M1Fail();
+        }
+        if (col.CompareTag("clear")) {
+            Debug.Log("clear");
+            GameManager.Instance.M1Clear();
+        }
+    }
+
 }

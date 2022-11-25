@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameStart() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("SejongUniv");
     }
 
     public void Credit() {
@@ -73,6 +73,13 @@ public class GameManager : MonoBehaviour
 
     public void ToTitile() {
         SceneManager.LoadScene("Title");
+    }
+
+    public void M1Fail() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M1Clear() {
+        SceneManager.LoadScene("SejongUniv");
     }
 
 }
