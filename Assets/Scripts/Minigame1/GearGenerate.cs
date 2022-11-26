@@ -21,12 +21,12 @@ public class GearGenerate : MonoBehaviour
         if (timer > lastTime + 2f) {
             int rand = Random.Range(0,3);
             if (rand == 0) {
-                GameObject g = Instantiate(gear, new Vector3(-10, player.transform.position.y + Random.Range(2, 7), 0 ), Quaternion.identity);
+                GameObject g = Instantiate(gear, new Vector3(-10, player.transform.position.y + Random.Range(4, 10), 0 ), Quaternion.identity);
                 g.transform.parent = gears.transform;
                 g.GetComponent<Gear>().gearType = 0;
             }
             else if (rand == 1) {
-                GameObject g = Instantiate(gear, new Vector3(10, player.transform.position.y + Random.Range(2, 7), 0 ), Quaternion.identity);
+                GameObject g = Instantiate(gear, new Vector3(10, player.transform.position.y + Random.Range(4, 10), 0 ), Quaternion.identity);
                 g.transform.parent = gears.transform;
                 g.GetComponent<Gear>().gearType = 1;
             }

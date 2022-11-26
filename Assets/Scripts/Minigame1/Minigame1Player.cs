@@ -8,6 +8,9 @@ public class Minigame1Player : MonoBehaviour
     public float moveSpeed, jumpForce, smoothing;
     public Transform GroundCheck1;
     public LayerMask groundLayer;
+    public GameObject giraffe;
+    public GameObject bubble;
+    public Camera cam;
 
     Rigidbody2D rb;
     Animator anim;
@@ -72,13 +75,24 @@ public class Minigame1Player : MonoBehaviour
         if (col.CompareTag("death") && playing) {
             Debug.Log("gameover");
             playing = false;
+            rb.velocity = Vector3.zero;
             ui.GameFail();
         }
         if (col.CompareTag("clear")) {
             Debug.Log("clear");
-            GameManager.Instance.M1Clear();
+            giraffe.GetComponent<Animator>().Play("eat");
+            StartCoroutine("wait");
             playing = false;
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            Vector3 pos = cam.WorldToScreenPoint(transform.position);
+            bubble.transform.position = pos;
+            bubble.SetActive(true);
         }
+    }
+
+    IEnumerator wait() {
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.M1Clear();
     }
 
 }

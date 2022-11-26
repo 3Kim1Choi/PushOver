@@ -24,7 +24,7 @@ public class Minigame1Camera : MonoBehaviour
             //카메라의 위치 부드럽게 변환
             camPos = Vector2.Lerp(transform.position, player.position, Time.deltaTime * speed);
             //카메라 위치 설정
-            transform.position = new Vector3(0, camPos.y,transform.position.z);
+            transform.position = new Vector3(0, camPos.y + 0.2f,transform.position.z);
             camMaxY = player.position.y;
         }
     }
