@@ -14,7 +14,7 @@ namespace PathCreation {
             for (int i = 0; i < 8; i++) {
                 npcs[i] = new List<NPC>();
             }
-            MakeNPCGroupe(10, 0);
+            MakeNPCGroupe(20, 0);
         }
 
         void MakeNPCGroupe(int cnt, int line) {
