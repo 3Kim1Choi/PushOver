@@ -17,6 +17,7 @@ public class Minigame1Player : MonoBehaviour
     float horizontalMove, verticalMove;
     Vector2 vel = Vector2.zero;
     bool jump, onGround, facingLeft;
+    string animationState;
     [SerializeField] Minigame1UI ui;
 
     private void Awake() {
@@ -26,6 +27,8 @@ public class Minigame1Player : MonoBehaviour
 
     private void Start() {
         StartMinigame();
+        animationState = "idle";
+        onGround = true;
     }
 
     void Update() {
@@ -34,8 +37,7 @@ public class Minigame1Player : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             jump = true;
         }
-
-        onGround = Physics2D.OverlapCircle(GroundCheck1.position, 0.15f, groundLayer);
+        onGround = rb.velocity.y <= 0 && Physics2D.OverlapCircle(GroundCheck1.position, 0.15f, groundLayer);
     }
 
     void StartMinigame() {
@@ -57,10 +59,12 @@ public class Minigame1Player : MonoBehaviour
         }
 
         //애니메이션
-        if (!onGround ||(horizontalMove <= 0.1f && horizontalMove >= -0.1f)) {
-            anim.Play("idle");
+        if (!onGround) {
+            AnimationControl("jump");
+        } else if (horizontalMove <= 0.1f && horizontalMove >= -0.1f) {
+            AnimationControl("idle");
         } else {
-            anim.Play("run");
+            AnimationControl("run");
         }
         if (facingLeft && horizontalMove > 0.1f) {
             facingLeft = false;
@@ -69,6 +73,13 @@ public class Minigame1Player : MonoBehaviour
             facingLeft = true;
             transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, transform.localScale.z);
         }
+    }
+
+    void AnimationControl(string animation) {
+        if (animation == animationState)
+            return;
+        anim.Play(animation);
+        animationState = animation;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

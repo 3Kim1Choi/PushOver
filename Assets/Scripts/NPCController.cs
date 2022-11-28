@@ -14,10 +14,10 @@ namespace PathCreation {
             for (int i = 0; i < 8; i++) {
                 npcs[i] = new List<NPC>();
             }
-            MakeNPCGroupe(10, 0);
+            MakeNPCGroup(10, 0);
         }
 
-        void MakeNPCGroupe(int cnt, int line) {
+        void MakeNPCGroup(int cnt, int line) {
             for (int i = 0; i < cnt; i++) {
                 MakeNPC(NPCPrefab, line, (float)i / cnt, Random.Range(0,3));
             }
