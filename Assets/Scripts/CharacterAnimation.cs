@@ -11,7 +11,7 @@ public class CharacterAnimation : MonoBehaviour
     bool movingSideways = true;
     bool moving;
     char dir;
-    string[] characterName = new string[] {"OneChoi","Harang","TaeHan"};
+    string[] characterName = new string[] {"OneChoi","Harang","TaeHan","NPC1","NPC2","NPC3"};
     const string IDLE = "_idle";
     const string WALK = "_walk";
 
