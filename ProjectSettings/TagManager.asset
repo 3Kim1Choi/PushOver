@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - death
   - clear
+  - NPC
   layers:
   - Default
   - TransparentFX
