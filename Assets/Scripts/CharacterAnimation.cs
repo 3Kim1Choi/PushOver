@@ -27,26 +27,26 @@ public class CharacterAnimation : MonoBehaviour
             }
         } else {
             if(movingSideways) {
-                if (movement.x > 0)
+                if (movement.x > 0.3f)
                     dir = 'R';
-                else if (movement.x < 0)
+                else if (movement.x < -0.3f)
                     dir = 'L';
                 else {
                     if (movement.y > 0) 
                         dir = 'U';
-                    else if (movement.y < 0)
+                    else if (movement.y <= 0)
                         dir = 'D';
                     movingSideways = false;
                 }
             } else {
-                if (movement.y > 0) 
+                if (movement.y > 0.3f) 
                     dir = 'U';
-                else if (movement.y < 0)
+                else if (movement.y < -0.3f)
                     dir = 'D';
                 else {
                     if (movement.x > 0)
                         dir = 'R';
-                    else if (movement.x < 0)
+                    else if (movement.x <= 0)
                         dir = 'L';
                     movingSideways = true;
                 }

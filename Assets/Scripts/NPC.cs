@@ -11,7 +11,6 @@ namespace PathCreation {
         public PathCreator pathCreator;
         public int pathNum;
         public EndOfPathInstruction endOfPathInstruction;
-        public Transform player;
         public float targetSpeed;
         float speed;
         [Range(0f, 1f)]
@@ -19,22 +18,24 @@ namespace PathCreation {
         float distanceTravelled;
         bool active;
         Vector2 movement;
+        Vector2 posSave;
 
 
         void Start() {
             c_anim = GetComponent<CharacterAnimation>();
             rb = GetComponent<Rigidbody2D>();
-            player = GameObject.FindGameObjectWithTag("Player").transform;
             npcController = FindObjectOfType<NPCController>();
             targetSpeed = npcController.npcSpeed;
             distanceTravelled = pathCreator.path.length * startPoint;
             speed = targetSpeed;
+            posSave = transform.position;
         }
 
         private void Update() {
             distanceTravelled += speed * Time.deltaTime;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-            movement = new Vector2(rb.velocity.x, rb.velocity.y).normalized;
+            movement = (new Vector2(transform.position.x,transform.position.y) - posSave).normalized;
+            posSave = new Vector2(transform.position.x, transform.position.y);
         }
 
         private void FixedUpdate() {

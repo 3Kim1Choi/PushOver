@@ -14,32 +14,22 @@ namespace PathCreation {
             for (int i = 0; i < 8; i++) {
                 npcs[i] = new List<NPC>();
             }
-            /*
-            MakeCar(greenCar, 0, 0);
-            MakeCar(redMotorcycle, 0, 0.5f);
-            MakeCar(blueCar, 1, 0.25f);
-            MakeCar(bigGreenCar, 1, 0.75f);
-            //b
-            MakeCar(brownMotorcycle, 2, 0);
-            MakeCar(bigGreenCar, 2, 0.5f);
-            MakeCar(greenCar, 3, 0.25f);
-            MakeCar(whiteMotorcycle, 3, 0.75f);
-            //e
-            MakeCar(greenCar, 6, 0);
-            MakeCar(purpleCar, 6, 0.3f);
-            MakeCar(blueCar, 6, 0.6f);
-            //f
-            MakeCar(redCar, 7, 0);
-            MakeCar(redMotorcycle, 7, 0.4f);
-            MakeCar(yellowCar, 7, 0.8f);*/
+            MakeNPCGroupe(10, 0);
         }
 
-        void MakeCar(GameObject go, int num, float sP) {
+        void MakeNPCGroupe(int cnt, int line) {
+            for (int i = 0; i < cnt; i++) {
+                MakeNPC(NPCPrefab, line, (float)i / cnt, Random.Range(0,3));
+            }
+        }
+
+        void MakeNPC(GameObject go, int num, float sP, int character) {
             GameObject npc = Instantiate(go, spawnPos, Quaternion.identity);
             NPC pf = npc.GetComponent<NPC>();
             pf.pathCreator = paths[num];
             pf.startPoint = sP;
             pf.pathNum = num;
+            npc.GetComponent<CharacterAnimation>().characterNum = character + 3;
             npc.transform.SetParent(NPCParent);
             npcs[num].Add(pf);
         }
