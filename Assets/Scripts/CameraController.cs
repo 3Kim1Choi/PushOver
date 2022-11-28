@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    
     public float speed;
     public float maxLookAhead;
     public Transform player;
+    public Vector2 maxXY,minXY;
     Camera cam;
     PlayerController playerController;
     Vector2 camPos;
+    Vector3 fixPos;
     Vector3 targetPos;
     
     void Start() {
@@ -27,7 +28,8 @@ public class CameraController : MonoBehaviour
         targetPos = new Vector3(Mathf.Cos(degree * Mathf.Deg2Rad), Mathf.Sin(degree * Mathf.Deg2Rad) * 0.6f, 0) * lookAhead;
         //카메라의 위치 부드럽게 변환
         camPos = Vector2.Lerp(transform.position, player.position + targetPos, Time.deltaTime * speed);
+        fixPos = new Vector3(Mathf.Clamp(camPos.x,minXY.x,maxXY.x),Mathf.Clamp(camPos.y,minXY.y,maxXY.y),transform.position.z);
         //카메라 위치 설정
-        transform.position = new Vector3(camPos.x,camPos.y,transform.position.z);
+        transform.position = fixPos;
     }
 }
