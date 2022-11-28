@@ -29,7 +29,7 @@ namespace PathCreation {
             pf.pathCreator = paths[num];
             pf.startPoint = sP;
             pf.pathNum = num;
-            npc.GetComponent<CharacterAnimation>().characterNum = character + 3;
+            npc.GetComponent<CharacterAnimation>().characterNum = character + 8;
             npc.transform.SetParent(NPCParent);
             npcs[num].Add(pf);
         }
