@@ -13,6 +13,8 @@ public enum GameState {
     Ending
 }
 
+//게임의 전체적인 흐름과 중요 정보를 저장한다
+//SINGLETON 클래스
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -30,6 +32,12 @@ public class GameManager : MonoBehaviour
 
     public void Start() {
         UpdateGameState(GameState.Title);
+    }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.U)) {
+            M1Start();
+        }
     }
 
     public void UpdateGameState(GameState newState) {
@@ -54,5 +62,33 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
+    public void GameStart() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+
+    public void Credit() {
+        SceneManager.LoadScene("Credit");
+    }
+
+    public void Quit() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+            Application.Quit();
+    }
+
+    public void ToTitile() {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void M1Start() {
+        SceneManager.LoadScene("JumpMinigame");
+    }
+    public void M1Fail() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M1Clear() {
+        SceneManager.LoadScene("SejongUniv");
+    }
 
 }

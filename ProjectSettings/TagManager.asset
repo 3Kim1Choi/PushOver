@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Platform
+  - death
+  - clear
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -11,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Platform
   - 
   - 
   - 
@@ -40,4 +44,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3396176429
+    locked: 0
+  - name: Floor
+    uniqueID: 2716410809
+    locked: 0
+  - name: Grass
+    uniqueID: 2457387877
+    locked: 0
+  - name: Object
+    uniqueID: 431709097
+    locked: 0
+  - name: Building
+    uniqueID: 3082797587
+    locked: 0
+  - name: Player
+    uniqueID: 3265369443
+    locked: 0
+  - name: Over
+    uniqueID: 2649070745
     locked: 0

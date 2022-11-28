@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Title.unity
+    guid: 6ff56309a84e001419e6f01fd37eb9bc
+  - enabled: 1
+    path: Assets/Scenes/SejongUniv.unity
+    guid: 6b2de628359f1234b9e0c5a20975ef5f
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: c77d7d1c2e4964e4da6dab7974dcd408
+  - enabled: 1
+    path: Assets/Scenes/JumpMinigame.unity
+    guid: 3e2811563cbb868428e810e3cca0ee7f
+  - enabled: 0
+    path: Assets/Scenes/Playtest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
