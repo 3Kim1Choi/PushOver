@@ -31,8 +31,8 @@ public class CreditScreen : MenuElements
     
     public void Button(int n) {
         if (n == 0) {
-            //다울
-            Application.OpenURL(KDULink);
+            //재현
+            Application.OpenURL(CJHLink);
         } if (n == 1) {
             //건민
             Application.OpenURL(KGMLink);
@@ -40,8 +40,8 @@ public class CreditScreen : MenuElements
             //소영
             Application.OpenURL(KSYLink);
         } else if (n == 3) {
-            //재현
-            Application.OpenURL(CJHLink);
+            //다울
+            Application.OpenURL(KDULink);
         } else if (n == 4) {
             GameManager.Instance.ToTitile();
         }

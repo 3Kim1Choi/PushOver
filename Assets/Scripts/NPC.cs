@@ -9,7 +9,6 @@ namespace PathCreation {
 
         NPCController npcController;
         public PathCreator pathCreator;
-        public int pathNum;
         public EndOfPathInstruction endOfPathInstruction;
         public float targetSpeed;
         float speed;
