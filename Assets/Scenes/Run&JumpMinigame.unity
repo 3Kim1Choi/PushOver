@@ -41178,7 +41178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAE30\uB9B0\uC544 \uBC25\uBA39\uC790~!"
+  m_text: "\uD734 \uACFC\uC81C \uC804\uB2EC\uD574\uC8FC\uAE30 \uC131\uACF5~"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71c8a8628a7fad046b867c78a7355be8, type: 2}
   m_sharedMaterial: {fileID: 6587992414392423928, guid: 71c8a8628a7fad046b867c78a7355be8, type: 2}
@@ -67948,7 +67948,7 @@ GameObject:
   - component: {fileID: 2898630388170034353}
   m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67997,7 +67997,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -68011,7 +68011,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.2}
+  m_Size: {x: 0.7, y: 0.2}
   m_EdgeRadius: 0
 --- !u!212 &2898630388170034367
 SpriteRenderer:
