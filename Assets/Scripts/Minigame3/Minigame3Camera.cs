@@ -9,13 +9,13 @@ public class Minigame3Camera : MonoBehaviour
     public Transform player;
     public float minY, maxY;
     Camera cam;
-    PlayerController playerController;
+    Minigame3Player playerController;
     Vector2 camPos;
     Vector3 fixPos;
     Vector3 targetPos;
     
     void Start() {
-        playerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<Minigame3Player>();
         cam = GetComponent<Camera>();
         transform.position = new Vector3(player.transform.position.x,0,-10f);
     }

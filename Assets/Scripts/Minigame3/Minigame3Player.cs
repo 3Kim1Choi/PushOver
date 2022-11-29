@@ -8,20 +8,27 @@ public class Minigame3Player : MonoBehaviour
     public float moveSpeed;
     [Header("Read Only")]
     public float curSpeed;
+    [SerializeField] Minigame1UI minigame1UI;
 
     Rigidbody2D rb;
     CharacterAnimation c_anim;
 
     Vector2 movement;
+    bool playing;
     
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         c_anim = GetComponent<CharacterAnimation>();
+        playing = true;
     }
 
     void Update() {
-        GetInput();
+        if (playing)
+            GetInput();
         curSpeed = rb.velocity.magnitude;
+        if(Input.GetKeyDown(KeyCode.I))
+            minigame1UI.GameFail();
+            
     }
 
     private void FixedUpdate() {
@@ -34,5 +41,15 @@ public class Minigame3Player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.Normalize();
+    }
+
+    public void Caught() {
+        playing = false;
+        StartCoroutine("Freeze");
+    }
+
+    IEnumerator Freeze() {
+        yield return new WaitForSeconds(3f);
+        playing = true;
     }
 }

@@ -16,10 +16,10 @@ TagManager:
   - Water
   - UI
   - Platform
-  - 
-  - 
-  - 
-  - 
+  - Object
+  - Mask
+  - BehindMask
+  - Black
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: Over
     uniqueID: 2649070745
+    locked: 0
+  - name: ScreenEffect
+    uniqueID: 3848252993
     locked: 0
