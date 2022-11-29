@@ -16,6 +16,7 @@ public class Minigame2Player : MonoBehaviour
     float horizontalMove, verticalMove;
     Vector2 vel = Vector2.zero;
     bool jump, onGround, facingLeft;
+    string animationState;
     [SerializeField] Minigame2UI ui;
 
     private void Awake() {
@@ -57,9 +58,10 @@ public class Minigame2Player : MonoBehaviour
 
         //애니메이션
         if (!onGround) {
-            anim.Play("idle");
-        } else {
-            anim.Play("run");
+            AnimationControl("jump");
+        }
+        else {
+            AnimationControl("run");
         }
         
         
@@ -67,6 +69,13 @@ public class Minigame2Player : MonoBehaviour
             facingLeft = false;
             transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, transform.localScale.z);
         }
+    }
+
+        void AnimationControl(string animation) {
+        if (animation == animationState)
+            return;
+        anim.Play(animation);
+        animationState = animation;
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
