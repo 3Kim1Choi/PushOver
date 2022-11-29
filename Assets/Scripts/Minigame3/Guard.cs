@@ -12,12 +12,15 @@ namespace PathCreation {
         [Range(0f, 1f)]
         public float startPoint;
         public float maxSpeed;
+        public float viewDist;
+        public float fov;
         float distanceTravelled;
         bool active;
         Vector2 movement;
         Vector2 posSave;
         float targetSpeed;
         float speed;
+        
 
         private void Start() {
             c_anim = GetComponent<CharacterAnimation>();
@@ -26,6 +29,8 @@ namespace PathCreation {
             distanceTravelled = pathCreator.path.length * startPoint;
             speed = targetSpeed;
             posSave = transform.position;
+            fieldOfView.fov = fov;
+            fieldOfView.viewDistance = viewDist;
         }
 
         private void Update() {

@@ -7,9 +7,11 @@ public class FieldOfView : MonoBehaviour
     Mesh mesh;
     Vector3 origin = Vector3.zero;
     float startingAngle;
-    float fov;
-    int rayCount = 20;
-    float viewDistance = 20f;
+    public float fov;
+    int rayCount = 30;
+    bool playing;
+    [SerializeField] Minigame3Player player;
+    public float viewDistance = 20f;
     public LayerMask layerMask;
 
     private void Start() {
@@ -17,6 +19,8 @@ public class FieldOfView : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh;
         origin = Vector3.zero;
         fov = 90;
+        playing = true;
+        
     }
 
     private void LateUpdate() {
@@ -42,6 +46,10 @@ public class FieldOfView : MonoBehaviour
                 vertex = origin + angleVec * viewDistance;
             } else {
                 vertex = raycastHit2D.point;
+                if (raycastHit2D.collider.gameObject.CompareTag("Player") && playing) {
+                    playing = false;
+                    player.Caught();
+                }
             }
             vertices[vertexIndex] = vertex;
 

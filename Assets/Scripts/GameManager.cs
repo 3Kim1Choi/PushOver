@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U)) {
             M1Start();
         }
+        if (Input.GetKeyDown(KeyCode.I)) {
+            //M2Start();
+        }
+        if (Input.GetKeyDown(KeyCode.P)) {
+            M3Start();
+        }
     }
 
     public void UpdateGameState(GameState newState) {
@@ -88,6 +94,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SejongUniv");
     }
     public void M1Clear() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M3Start() {
+        SceneManager.LoadScene("StealthMinigame");
+    }
+    public void M3Fail() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M3Clear() {
         SceneManager.LoadScene("SejongUniv");
     }
 
