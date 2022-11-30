@@ -113,4 +113,19 @@
 
 ## Map
 <div class ="logo" align="center"> <img src="./img/in_game_map.jpg" width = "500"> </div>
-Map은 세종대학교의 모습
+
+- Map은 세종대학교 학교 모습을 본따서 최대한 그 구조와 건물의 디테일을 살리고자 구현하였습니다.  
+- 위 img에서 볼 수 있듯이 세종대학교의 학생회관, 대양AI센터, 시계탑, 광개토관 등의 건축물을 살펴 볼 수 있습니다.
+
+## Main Story
+<div class ="logo" align="center"> <img src="./img/in_game_mainstory.jpg" width = "500"> </div>
+
+- Main Story는 캐릭터들이 대사창을 통하여 대화를 주고 받음으로써 진행됩니다.
+- 단순히 대화만이 오가는 것이 아닌 질문에 대한 대답을 플레이어가 직접 선택하여 좀 더 주인공에 몰입하고 캐릭터들과 대화하는 듯한 느낌을 받을 수 있습니다.
+
+## Mini Game
+<div class ="logo" align="center"> <img src="./img/in_game_minigame.jpg" width = "500"> </div>
+
+- Main Story와는 별개로 서브 퀘스트 형식으로 게임 중간중간 Mini Game을 진행할 수 있습니다.
+- Mini Game은 수직 점프 게임, 러닝&점프 게임, 잠입 게임으로 총 3가지 종류가 있습니다.
+- Mini Game을 함으로써 주인공의 호감을 쌓을 수 있습니다.
