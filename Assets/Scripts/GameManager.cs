@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public GameState State;
     public static event Action<GameState> OnGameStateChanged;
+    public int minigame;
+    public int positivity;
+    public bool m1clear,m2clear,m3clear;
+    public float transitionTime;
 
     private void Awake() {
         if (Instance == null) {
@@ -31,19 +35,33 @@ public class GameManager : MonoBehaviour
     }
 
     public void Start() {
+        positivity = 0;
+        m1clear = false;
+        m2clear = false;
+        m3clear = false;
         UpdateGameState(GameState.Title);
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.U)) {
+        if (Input.GetKeyDown(KeyCode.I)) {
             M1Start();
         }
-        if (Input.GetKeyDown(KeyCode.I)) {
+        if (Input.GetKeyDown(KeyCode.O)) {
             M2Start();
         }
         if (Input.GetKeyDown(KeyCode.P)) {
             M3Start();
         }
+        if (Input.GetKeyDown(KeyCode.J)) {
+            M1Clear();
+        }
+        if (Input.GetKeyDown(KeyCode.K)) {
+            M1Clear();
+        }
+        if (Input.GetKeyDown(KeyCode.L)) {
+            M1Clear();
+        }
+        SceneManager.sceneLoaded += NewSceneLoaded;
     }
 
     public void UpdateGameState(GameState newState) {
@@ -92,31 +110,58 @@ public class GameManager : MonoBehaviour
     }
 
     public void M1Start() {
+        minigame = 1;
         SceneManager.LoadScene("JumpMinigame");
     }
     public void M1Fail() {
         SceneManager.LoadScene("SejongUniv");
     }
     public void M1Clear() {
-        SceneManager.LoadScene("SejongUniv");
+        if (!m1clear)
+            positivity++;
+        m1clear = true;
+        StartCoroutine("Transition1");
     }
     public void M2Start() {
+        minigame = 2;
         SceneManager.LoadScene("Run&JumpMinigame");
     }
     public void M2Fail() {
         SceneManager.LoadScene("SejongUniv");
     }
     public void M2Clear() {
-        SceneManager.LoadScene("SejongUniv");
+        if (!m2clear)
+            positivity++;
+        m2clear = true;
+        StartCoroutine("Transition1");
     }
     public void M3Start() {
+        minigame = 3;
         SceneManager.LoadScene("StealthMinigame");
     }
     public void M3Fail() {
         SceneManager.LoadScene("SejongUniv");
     }
     public void M3Clear() {
+        if (!m3clear)
+            positivity++;
+        m3clear = true;
+        StartCoroutine("Transition1");
+    }
+    public void ToUniv() {
         SceneManager.LoadScene("SejongUniv");
+    }
+    IEnumerator Transition1() {
+        FindObjectOfType<SceneTransition>().EndAnimation();
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene("Clear");
+        FindObjectOfType<SceneTransition>().StartAnimation();
+    }
+    void NewSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (SceneManager.GetActiveScene().name == "Clear") {
+            Debug.Log("load");
+            FindObjectOfType<SceneTransition>().StartAnimation();
+        }
     }
 
 }

@@ -1152,6 +1152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   State: 0
+  minigame: 0
+  positivity: 0
+  m1clear: 0
+  m2clear: 0
+  m3clear: 0
+  transitionTime: 1
 --- !u!4 &1400754056
 Transform:
   m_ObjectHideFlags: 0
