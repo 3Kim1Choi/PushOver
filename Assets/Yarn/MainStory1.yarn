@@ -1,5 +1,4 @@
-﻿//메인스토리1 처음 시작했을때 출력
-title: Start
+﻿title: Start
 tags:
 ---
 김원최: 으...
@@ -287,6 +286,8 @@ tags:
 김원최: 으응...
 ===
 
+<<<<<<< HEAD
+=======
 title: Harangmusical
 tags:
 ---
@@ -537,3 +538,4 @@ tags:
 ~SubQuestStory~
 ~END~
 ===
+>>>>>>> d640ce311955f250895aeddf77a103d151c10a9b
