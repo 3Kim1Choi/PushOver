@@ -9,8 +9,11 @@ public class Gear : MonoBehaviour
     [SerializeField] Sprite s1,s2,s3;
     SpriteRenderer sr;
 
-    void Start() {
+    void Awake() {
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    public void Generated() {
         LeanTween.rotate(gameObject, new Vector3(0, 0, 90), 0.5f).setRepeat(30);
         if (gearType == 0) {
             LeanTween.moveX(gameObject, 10, Random.Range(6,8)).setEase(LeanTweenType.easeInOutCubic).setOnComplete(Destroy);
@@ -22,10 +25,12 @@ public class Gear : MonoBehaviour
             LeanTween.moveY(gameObject, transform.position.y - 25, Random.Range(7,9)).setEase(LeanTweenType.easeInCubic).setOnComplete(Destroy);
             sr.sprite = s3;
         }
+
     }
 
     void Destroy() {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        ObjectPool.instance.gearQueue.Enqueue(gameObject);
     }
     
 }
