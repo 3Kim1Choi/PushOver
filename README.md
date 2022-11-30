@@ -29,7 +29,7 @@
 
 >PushOver은 주인공인 김원최의 시점으로 플레이하는 스토리형 RPG게임입니다.
 
-## Contributors
+## Member
 
 <table>
 <th>
@@ -83,3 +83,49 @@
 > 플레이어가 김원최를 조종하여 다양한 미션을 수행해야합니다.  
 기본적으로 방향키를 사용해 움직입니다. 키보드와 마우스를 사용해 퀘스트를 수락하거나 대화창을 넘길 수 있습니다.  
  플레이어가 부탁을 들어주고 성공적으로 완수할 때마다 난이도에 따라 일정량의 호감도가 올라가게 됩니다. 이 호감도를 일정치 이상 쌓게되면 주변인물들의 원최를 대하는 분위기가 달라지며 이는 게임의 결말에 큰 영향을 미칩니다. 반대로 미션에 실패할 경우 호감도가 깎이게 됩니다. 난이도가 높은 부탁은 상승하고 하락하는 호감도도 크기 때문에 이에 주의해주시기 바랍니다.
+
+ ## Charactor
+ <table>
+<th>
+<div class="profile" align="center">
+  <img src="./img/oc1.png" width = "70" style = "border-radius: 25px"/>
+</div>
+<br>
+김원최
+</th>
+
+<th>
+<div class="profile" align="center">
+  <img src="./img/Harang_Normal.png" width = "70" style = "border-radius: 25px"/>
+</a></div>
+<br>
+류하랑
+</th>
+
+<th>
+<div class="profile" align="center">
+  <img src="./img/t2.png" width = "70" style = "border-radius: 25px"/>
+</a></div>
+<br>
+송태한
+</th>
+</table>
+
+## Map
+<div class ="logo" align="center"> <img src="./img/in_game_map.jpg" width = "500"> </div>
+
+- Map은 세종대학교 학교 모습을 본따서 최대한 그 구조와 건물의 디테일을 살리고자 구현하였습니다.  
+- 위 img에서 볼 수 있듯이 세종대학교의 학생회관, 대양AI센터, 시계탑, 광개토관 등의 건축물을 살펴 볼 수 있습니다.
+
+## Main Story
+<div class ="logo" align="center"> <img src="./img/in_game_mainstory.jpg" width = "500"> </div>
+
+- Main Story는 캐릭터들이 대사창을 통하여 대화를 주고 받음으로써 진행됩니다.
+- 단순히 대화만이 오가는 것이 아닌 질문에 대한 대답을 플레이어가 직접 선택하여 좀 더 주인공에 몰입하고 캐릭터들과 대화하는 듯한 느낌을 받을 수 있습니다.
+
+## Mini Game
+<div class ="logo" align="center"> <img src="./img/in_game_minigame.jpg" width = "500"> </div>
+
+- Main Story와는 별개로 서브 퀘스트 형식으로 게임 중간중간 Mini Game을 진행할 수 있습니다.
+- Mini Game은 수직 점프 게임, 러닝&점프 게임, 잠입 게임으로 총 3가지 종류가 있습니다.
+- Mini Game을 함으로써 주인공의 호감을 쌓을 수 있습니다.
