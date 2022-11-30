@@ -104,7 +104,7 @@
 
 <th>
 <div class="profile" align="center">
-  <img src="./img/t2.jpg" width = "70" style = "border-radius: 25px"/>
+  <img src="./img/t2.png" width = "70" style = "border-radius: 25px"/>
 </a></div>
 <br>
 송태한
