@@ -84,13 +84,11 @@ public class Minigame1Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("death") && playing) {
-            Debug.Log("gameover");
             playing = false;
             rb.velocity = Vector3.zero;
             ui.GameFail();
         }
         if (col.CompareTag("clear")) {
-            Debug.Log("clear");
             giraffe.GetComponent<Animator>().Play("eat");
             StartCoroutine("wait");
             playing = false;

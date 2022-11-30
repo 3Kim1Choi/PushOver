@@ -85,4 +85,10 @@ public class FieldOfView : MonoBehaviour
         if (n < 0) n += 360;
         startingAngle = n - fov/2f;
     }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("clear")) {
+            
+        }
+    }
 }
