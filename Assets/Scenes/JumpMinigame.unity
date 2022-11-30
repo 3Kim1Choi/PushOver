@@ -321,6 +321,7 @@ MonoBehaviour:
   index: 0
   audioSource: {fileID: 0}
   bg: {fileID: 154755908}
+  gameNum: 1
 --- !u!1 &154755908
 GameObject:
   m_ObjectHideFlags: 0

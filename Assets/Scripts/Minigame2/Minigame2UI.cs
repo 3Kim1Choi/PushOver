@@ -18,9 +18,9 @@ public class Minigame2UI : MenuElements
         if (gameFail) {
             if (n == 0) {
                 LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 0, 0.05f);
-                GameManager.Instance.M1Start();
+                GameManager.Instance.M2Start();
             } if (n == 1) {
-                GameManager.Instance.M1Fail();
+                GameManager.Instance.M2Fail();
             }
 
         }

@@ -364,7 +364,7 @@ MonoBehaviour:
     m_Bits: 64
   bubble: {fileID: 1148949306}
   cam: {fileID: 631799129}
-  ui: {fileID: 1009838250}
+  ui: {fileID: 1009838252}
 --- !u!1 &163437411
 GameObject:
   m_ObjectHideFlags: 0
@@ -40251,8 +40251,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1009838249}
-  - component: {fileID: 1009838250}
   - component: {fileID: 1009838251}
+  - component: {fileID: 1009838252}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -40275,23 +40275,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1009838250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009838245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a55b7b3b3c8942489f21731ef2d5567, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyDown: 0
-  maxIndex: 1
-  index: 0
-  audioSource: {fileID: 0}
-  bg: {fileID: 1220007573}
 --- !u!114 &1009838251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40308,12 +40291,27 @@ MonoBehaviour:
   platform: {fileID: 1385141372317880771, guid: 1ff48b624502e0c47b079c012f7a4ad2, type: 3}
   platformCnt: 38
   min_interval: 8
-  max_interval: 17
-  minY: -0.6
-  maxY: -0.6
-  minW: 1
-  maxW: 1
-  maxYDif: -0.6
+  max_interval: 13
+  yPos1: -0.5
+  yPos2: 1.5
+--- !u!114 &1009838252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009838245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cafa5e4646d8341bc80e4479102e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyDown: 0
+  maxIndex: 1
+  index: 0
+  audioSource: {fileID: 0}
+  bg: {fileID: 1220007573}
+  gameNum: 2
 --- !u!1 &1059103527
 GameObject:
   m_ObjectHideFlags: 0
@@ -40572,8 +40570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -130.5448, y: -72.48682}
-  m_SizeDelta: {x: 273.2417, y: 71.8306}
+  m_AnchoredPosition: {x: -141.28247, y: -80.08829}
+  m_SizeDelta: {x: 439.6312, y: 88.4696}
   m_Pivot: {x: -0.06453327, y: -0.4568473}
 --- !u!114 &1148949308
 MonoBehaviour:
@@ -41155,8 +41153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.5821838, y: 3.7559204}
-  m_SizeDelta: {x: 252.5829, y: 50}
+  m_AnchoredPosition: {x: -0.00045776367, y: 3.7559204}
+  m_SizeDelta: {x: 412.4, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1290153622
 MonoBehaviour:
@@ -41385,7 +41383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 0}
   creditScreen: {fileID: 0}
-  minigame1UI: {fileID: 0}
+  minigame1UI: {fileID: 1009838252}
   animator: {fileID: 1333022829}
   thisIndex: 0
   thisScene: 2
@@ -41463,7 +41461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 0}
   creditScreen: {fileID: 0}
-  minigame1UI: {fileID: 0}
+  minigame1UI: {fileID: 1009838252}
   animator: {fileID: 1394248653}
   thisIndex: 1
   thisScene: 2

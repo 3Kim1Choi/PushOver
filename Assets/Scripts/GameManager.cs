@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             M1Start();
         }
         if (Input.GetKeyDown(KeyCode.I)) {
-            //M2Start();
+            M2Start();
         }
         if (Input.GetKeyDown(KeyCode.P)) {
             M3Start();
@@ -94,6 +94,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SejongUniv");
     }
     public void M1Clear() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M2Start() {
+        SceneManager.LoadScene("Run&JumpMinigame");
+    }
+    public void M2Fail() {
+        SceneManager.LoadScene("SejongUniv");
+    }
+    public void M2Clear() {
         SceneManager.LoadScene("SejongUniv");
     }
     public void M3Start() {

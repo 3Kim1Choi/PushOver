@@ -6,6 +6,7 @@ public class Minigame1UI : MenuElements
 {
     public GameObject bg;
     bool gameFail;
+    public int gameNum;
     void Start() {
         gameFail = false;
     }
@@ -19,9 +20,19 @@ public class Minigame1UI : MenuElements
         if (gameFail) {
             if (n == 0) {
                 LeanTween.alphaCanvas(bg.GetComponent<CanvasGroup>(), 0, 0.05f);
-                GameManager.Instance.M3Start();
+                if (gameNum == 1)
+                    GameManager.Instance.M1Start();
+                if (gameNum == 2)
+                    GameManager.Instance.M2Start();
+                if (gameNum == 3)
+                    GameManager.Instance.M3Start();
             } if (n == 1) {
-                GameManager.Instance.M3Fail();
+                if (gameNum == 1)
+                    GameManager.Instance.M1Fail();
+                if (gameNum == 2)
+                    GameManager.Instance.M2Fail();
+                if (gameNum == 3)
+                    GameManager.Instance.M3Fail();
             }
 
         }

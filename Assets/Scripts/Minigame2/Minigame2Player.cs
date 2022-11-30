@@ -17,7 +17,7 @@ public class Minigame2Player : MonoBehaviour
     Vector2 vel = Vector2.zero;
     bool jump, onGround, facingLeft;
     string animationState;
-    [SerializeField] Minigame2UI ui;
+    [SerializeField] Minigame1UI ui;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -98,7 +98,7 @@ public class Minigame2Player : MonoBehaviour
 
     IEnumerator wait() {
         yield return new WaitForSeconds(3);
-        GameManager.Instance.M1Clear();
+        GameManager.Instance.M2Clear();
     }
 
 }

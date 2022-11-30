@@ -23,7 +23,7 @@ public class FieldOfView : MonoBehaviour
     }
 
     private void LateUpdate() {
-        float angle = startingAngle;
+        float angle = startingAngle + (fov-90);
         float angleIncrease = fov / rayCount;
 
         Vector3[] vertices = new Vector3[rayCount + 2];
