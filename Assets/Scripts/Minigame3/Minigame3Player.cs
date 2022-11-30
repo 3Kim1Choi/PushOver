@@ -17,6 +17,8 @@ public class Minigame3Player : MonoBehaviour
     Vector2 movement;
     bool playing;
     [SerializeField] GameObject exclamationMark;
+    [SerializeField] GameObject clear;
+    [SerializeField] Sprite sr;
     [SerializeField] Camera cam;
     
     void Start() {
@@ -59,16 +61,17 @@ public class Minigame3Player : MonoBehaviour
         yield return new WaitForSeconds(2f);
         playing = true;
         exclamationMark.SetActive(false);
-        GameManager.Instance.M3Fail();
+        minigame1UI.GameFail();
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
-        if (col.gameObject.CompareTag("clear")) {
+    private void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("clear")) {
             playing = false;
             StartCoroutine("wait");
             Vector3 pos = cam.WorldToScreenPoint(transform.position);
             bubble.transform.position = pos;
             bubble.SetActive(true);
+            clear.GetComponent<SpriteRenderer>().sprite = sr;
         }
     }
 
