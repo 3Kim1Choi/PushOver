@@ -8,6 +8,7 @@ public class Minigame3Player : MonoBehaviour
     public float moveSpeed;
     [Header("Read Only")]
     public float curSpeed;
+    public GameObject bubble;
     [SerializeField] Minigame1UI minigame1UI;
 
     Rigidbody2D rb;
@@ -48,7 +49,6 @@ public class Minigame3Player : MonoBehaviour
 
     public void Caught() {
         playing = false;
-        Debug.Log("freeze");
         exclamationMark.SetActive(true);
         exclamationMark.transform.position = cam.WorldToScreenPoint(transform.position + Vector3.up * 1.3f);
         movement = Vector2.zero;
@@ -60,5 +60,20 @@ public class Minigame3Player : MonoBehaviour
         playing = true;
         exclamationMark.SetActive(false);
         GameManager.Instance.M3Fail();
+    }
+
+    private void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.CompareTag("clear")) {
+            playing = false;
+            StartCoroutine("wait");
+            Vector3 pos = cam.WorldToScreenPoint(transform.position);
+            bubble.transform.position = pos;
+            bubble.SetActive(true);
+        }
+    }
+
+    IEnumerator wait() {
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.M3Clear();
     }
 }
