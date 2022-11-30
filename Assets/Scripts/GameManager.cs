@@ -69,6 +69,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameStart() {
+        SceneManager.LoadScene("Prologue");
+    }
+
+    public void Next() {
         SceneManager.LoadScene("SejongUniv");
     }
 
