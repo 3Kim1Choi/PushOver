@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playing: 0
-  moveSpeed: 16
+  moveSpeed: 14
   jumpForce: 15
   smoothing: 0.1
   GroundCheck1: {fileID: 64755243}
@@ -364,6 +364,7 @@ MonoBehaviour:
     m_Bits: 64
   bubble: {fileID: 1148949306}
   cam: {fileID: 631799129}
+  acceleration: 0.2
   ui: {fileID: 1009838252}
 --- !u!1 &163437411
 GameObject:
@@ -40290,7 +40291,7 @@ MonoBehaviour:
   parent: {fileID: 2898630388170034352}
   platform: {fileID: 1385141372317880771, guid: 1ff48b624502e0c47b079c012f7a4ad2, type: 3}
   platformCnt: 38
-  min_interval: 8
+  min_interval: 10
   max_interval: 13
   yPos1: -0.5
   yPos2: 1.5

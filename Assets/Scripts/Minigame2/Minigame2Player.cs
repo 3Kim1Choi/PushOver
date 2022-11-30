@@ -10,6 +10,7 @@ public class Minigame2Player : MonoBehaviour
     public LayerMask groundLayer;
     public GameObject bubble;
     public Camera cam;
+    public float acceleration;
 
     Rigidbody2D rb;
     Animator anim;
@@ -17,6 +18,7 @@ public class Minigame2Player : MonoBehaviour
     Vector2 vel = Vector2.zero;
     bool jump, onGround, facingLeft;
     string animationState;
+    float timer;
     [SerializeField] Minigame1UI ui;
 
     private void Awake() {
@@ -25,10 +27,12 @@ public class Minigame2Player : MonoBehaviour
     }
 
     private void Start() {
+        timer=0;
         StartMinigame();
     }
 
     void Update() {
+        timer += Time.deltaTime;
         horizontalMove = Input.GetAxisRaw("Horizontal");
         verticalMove = Input.GetAxisRaw("Vertical");
         if (Input.GetButtonDown("Jump")) {
@@ -48,7 +52,7 @@ public class Minigame2Player : MonoBehaviour
         if (!playing)
             return;
 
-        Vector2 targetVelocity = new Vector2(3 * Time.deltaTime * moveSpeed * 10, rb.velocity.y);
+        Vector2 targetVelocity = new Vector2(3 * Time.deltaTime * moveSpeed * 10 + acceleration * timer, rb.velocity.y);
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref vel, smoothing);
 
         if (jump && onGround) {
