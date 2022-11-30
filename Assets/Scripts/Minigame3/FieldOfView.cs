@@ -73,6 +73,7 @@ public class FieldOfView : MonoBehaviour
         mesh.uv = uv;
         mesh.triangles = triangles;
         
+        mesh.RecalculateBounds();
     }
 
     public void SetOrigin(Vector3 origin) {

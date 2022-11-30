@@ -11,6 +11,7 @@ Shader "Unlit With Shadows" {
         Pass{
         Tags{ "LightMode" = "ForwardBase" }
         ZWrite off
+        Ztest Always
         CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag
