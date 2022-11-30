@@ -15,6 +15,8 @@ public class Minigame3Player : MonoBehaviour
 
     Vector2 movement;
     bool playing;
+    [SerializeField] GameObject exclamationMark;
+    [SerializeField] Camera cam;
     
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +34,8 @@ public class Minigame3Player : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        if (playing)
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
         c_anim.CheckAnim(movement);
     }
 
@@ -45,11 +48,17 @@ public class Minigame3Player : MonoBehaviour
 
     public void Caught() {
         playing = false;
+        Debug.Log("freeze");
+        exclamationMark.SetActive(true);
+        exclamationMark.transform.position = cam.WorldToScreenPoint(transform.position + Vector3.up * 1.3f);
+        movement = Vector2.zero;
         StartCoroutine("Freeze");
     }
 
     IEnumerator Freeze() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         playing = true;
+        exclamationMark.SetActive(false);
+        GameManager.Instance.M3Fail();
     }
 }
