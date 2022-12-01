@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L)) {
             M1Clear();
         }
+        if (Input.GetKeyDown(KeyCode.M) && SceneManager.GetActiveScene().name == "Prologue") {
+            Next();
+        }
         SceneManager.sceneLoaded += NewSceneLoaded;
     }
 
