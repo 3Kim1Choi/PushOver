@@ -49,11 +49,11 @@
 </th>
 
 <th>
-<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=geonbly327">
+<div class="profile" align="center"><a href="https://github.com/3Kim1Choi/PushOver/commits?author=3lynk">
   <img src="https://avatars.githubusercontent.com/u/44095919?v=4" width = "70" style = "border-radius: 25px"/>
 </a></div>
 <br>
-<a href="https://github.com/geonbly327">김건민</a>
+<a href="https://github.com/3lynk">김건민</a>
 </th>
 
 <th>
